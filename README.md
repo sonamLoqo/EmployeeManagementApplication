@@ -1,16 +1,16 @@
-Instagram Profile Management System
+# Instagram Profile Management System
 
-Overview
+## Overview
 
 This project is an Instagram Profile Management System that uses Spring Boot and Elasticsearch to store, search, and manage Instagram profiles.
 
-1. InstagramProfile Entity Class
+## 1. InstagramProfile Entity Class
 
-Purpose:
+### Purpose:
 
 This class represents Instagram profiles.
 
-Explanation:
+### Explanation:
 
 The @Document annotation is used to create an Elasticsearch index named instagram_profile.
 
@@ -20,17 +20,17 @@ The @Field annotation specifies different profile fields such as username, fullN
 
 Each field type is defined according to the Elasticsearch format (e.g., FieldType.Keyword, FieldType.Text).
 
-2. InstagramProfileRepo Interface
+## 2. InstagramProfileRepo Interface
 
-Purpose:
+### Purpose:
 
 This interface acts as an Elasticsearch repository for InstagramProfile entity, allowing CRUD operations.
 
-Explanation:
+### Explanation:
 
 This interface extends ElasticsearchRepository, which provides basic CRUD operations.
 
-Methods:
+### Methods:
 
 findByUsername: Fetches profiles based on the username.
 
@@ -40,13 +40,13 @@ findByFollowerCountBetween: Fetches profiles within a given follower count range
 
 findAllCategories: Runs a custom query to fetch distinct categories.
 
-3. InstagramProfileService Class
+## 3. InstagramProfileService Class
 
-Purpose:
+### Purpose:
 
 This class handles business logic and processes data through the repository.
 
-Explanation:
+### Explanation:
 
 fetchProfilesByFollowerCount: Fetches profiles within a given follower count range.
 
@@ -58,13 +58,13 @@ saveAllProfiles: Saves multiple Instagram profiles.
 
 fetchAllCategories: Fetches all distinct categories and converts them into a list.
 
-4. InstagramProfileController Class
+## 4. InstagramProfileController Class
 
-Purpose:
+### Purpose:
 
 This controller class exposes REST APIs for users to fetch and save data.
 
-Explanation:
+### Explanation:
 
 searchByFollowersCount: API to search Instagram profiles based on follower count range.
 
@@ -76,9 +76,9 @@ saveProfiles: API to save multiple Instagram profiles via a POST request.
 
 getAllCategories: API to fetch all distinct categories.
 
-Summary of What and How
+## Summary of What and How
 
-What:
+### What:
 
 This project is an Instagram Profile Management System that uses Elasticsearch to store and search profile data.
 
@@ -86,7 +86,7 @@ Users can search profiles via APIs based on follower count, username, and catego
 
 APIs are available to save multiple profiles and fetch categories.
 
-How:
+### How:
 
 The InstagramProfile entity class defines all profile attributes using Elasticsearch annotations.
 
@@ -96,7 +96,7 @@ Business logic is implemented in the Service layer.
 
 REST APIs are created in the Controller layer for client interaction.
 
-Technologies Used
+## Technologies Used
 
 Java
 
@@ -108,13 +108,13 @@ Postman (for API testing)
 
 Maven
 
-API Endpoints
+### API Endpoints
 
 HTTP Method
 
 Endpoint
 
-Description
+### Description
 
 GET
 
@@ -146,7 +146,7 @@ GET
 
 Fetch all available categories.
 
-Conclusion
+## Conclusion
 
 This project efficiently manages Instagram profiles and provides powerful search functionalities using Spring Boot and Elasticsearch.
 
